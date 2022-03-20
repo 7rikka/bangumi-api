@@ -6,10 +6,6 @@ import java.util.Map;
 
 @Data
 public class BangumiRating {
-    /**
-     * 所属subjectId
-     */
-    private Integer id;
     private Integer total;
     private Double score;
     private Integer rank;

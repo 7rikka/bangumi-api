@@ -5,10 +5,6 @@ import lombok.Data;
 @Data
 public class BangumiCollection {
     /**
-     * 所属subjectId
-     */
-    private Integer id;
-    /**
      * 搁置
      */
     private Integer on_hold;

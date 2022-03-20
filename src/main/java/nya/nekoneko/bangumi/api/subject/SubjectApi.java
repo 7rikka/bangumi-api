@@ -17,16 +17,10 @@ public class SubjectApi implements ISubject {
     @Override
     public BangumiItem getSubject(int id) {
         Request request = BangumiRequestFactor.getRequest()
-                .url(UrlConfig.GET_SUBJECT + id)
+                .url(String.format(UrlConfig.GET_SUBJECT, id))
                 .get()
                 .buildRequest();
         String result = Call.doCall(request);
-        BangumiItem item = ONode.deserialize(result, BangumiItem.class);
-        //补充id
-        item.getRating().setId(id);
-        item.getImages().setId(id);
-        item.getCollection().setId(id);
-        item.getInfobox().forEach(i -> i.setId(id));
-        return item;
+        return ONode.deserialize(result, BangumiItem.class);
     }
 }
